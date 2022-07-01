@@ -45,7 +45,7 @@ class OpenApiRouteLoaderTest extends TestCase
     /**
      * Create mocks
      */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->decriptionMock = $this
             ->getMockBuilder(Description::class)
@@ -96,10 +96,11 @@ class OpenApiRouteLoaderTest extends TestCase
 
     /**
      * @test
-     * @expectedException \RuntimeException
+     *
      */
     public function cannotLoadSameDocumentMoreThanOnce()
     {
+        $this->expectException(\RuntimeException::class);
         $this->decriptionMock
             ->expects($this->any())
             ->method('getPaths')

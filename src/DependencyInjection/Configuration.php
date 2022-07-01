@@ -19,9 +19,9 @@ class Configuration implements ConfigurationInterface
     /**
      * {@inheritdoc}
      */
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
-        $rootNode = ($builder = new TreeBuilder())->root('api_routing');
+        $rootNode = ($builder = new TreeBuilder('api_routing'))->getRootNode();
         $rootNode
             ->children()
             ->scalarNode('name')->defaultValue('php-api')

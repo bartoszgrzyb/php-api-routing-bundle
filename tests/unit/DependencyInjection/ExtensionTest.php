@@ -19,7 +19,7 @@ class ExtensionTest extends TestCase
      */
     protected $extension;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->extension = new PhpApiRoutingExtension();
     }
